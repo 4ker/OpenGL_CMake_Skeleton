@@ -61,14 +61,14 @@ Application::Application():
 
     glfwMakeContextCurrent(window);
 
-	glewExperimental = GL_TRUE;
+    glewExperimental = GL_TRUE;
     GLenum err = glewInit();
 
     if ( err != GLEW_OK)
-	{
+    {
         glfwTerminate();
         throw std::runtime_error(string("Could initialize GLEW, error = ") + (const char*)glewGetErrorString(err));
-	}
+    }
 
 
     // get version info
@@ -143,7 +143,7 @@ void Application::detectWindowDimensionChange()
 {
     int w,h;
     glfwGetWindowSize(getWindow(), &w, &h);
-    dimensionChange = ( w!= width or h != height) ;
+    dimensionChange = ( w!= width || h != height) ;
     if (dimensionChange) 
     {
         width = w;
